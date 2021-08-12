@@ -11,6 +11,13 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^3",
+    "@types/mkdirp": "^1.0.2",
+    "amplify-cli-core": "^1.26.0",
+    "graphql-auth-transformer": "^6.24.17",
+    "graphql-connection-transformer": "^4.21.17",
+    "graphql-dynamodb-transformer": "^6.22.17",
+    "graphql-transformer-core": "^6.29.2",
+    "mkdirp": "^1.0.4",
     "tslib": "^1"
   },
   "devDependencies": {
@@ -43,7 +50,8 @@
     "posttest": "eslint . --ext .ts --config .eslintrc",
     "prepack": "rm -rf lib && tsc -b && oclif-dev readme",
     "test": "echo NO TESTS",
-    "version": "oclif-dev readme && git add README.md"
+    "version": "oclif-dev readme && git add README.md",
+    "lint": "eslint ./src/**/*.ts --fix"
   },
   "types": "lib/index.d.ts"
 }
