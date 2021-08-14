@@ -5,10 +5,11 @@ import * as path from 'path'
 import * as mkdirp from 'mkdirp'
 import {FeatureFlags} from 'amplify-cli-core'
 import {CLIcontextProvider} from './enviroment'
+import {StringMap} from 'graphql-transformer-core/lib/DeploymentResources'
 
 class AppsyncVltGenerator extends Command {
   static description = `
-  Generate VTL files from a GraphQL schema.
+  Generate VTL files and a graphql schema with the corresponding Query, Mutation and subscriptions.
 
   Example usage: appsync-vtl-generator schema.graphql ./mappers
   `
@@ -24,6 +25,7 @@ class AppsyncVltGenerator extends Command {
     {name: 'output'},
   ]
 
+  // command entry point
   async run() {
     const {args} = this.parse(AppsyncVltGenerator)
 
@@ -37,16 +39,16 @@ class AppsyncVltGenerator extends Command {
     const transfomer = transform.getTransformer()
     const SCHEMA = fs.readFileSync(args.input).toString()
 
+    const destinationFolder = args.output
+
     // create the output folder else `fs.writeFileSync` will trow an error
-    this.createFolders(path.join(__dirname, args.output))
+    await this.createFolders(destinationFolder)
 
     try {
       const out = transfomer.transform(SCHEMA)
-      Object.keys(out.resolvers).forEach(key => {
-        const vtlContend = out.resolvers[key]
-        const fileName = path.resolve(args.output, key)
-        fs.writeFileSync(fileName, vtlContend)
-      })
+
+      this.writeSchema(out.schema, destinationFolder)
+      this.writeResolvers(out.resolvers, destinationFolder)
     } catch (error) {
       this.log(error)
     }
@@ -62,6 +64,18 @@ class AppsyncVltGenerator extends Command {
 
   private async createFolders(path: string) {
     await mkdirp(path)
+  }
+
+  private writeSchema(schema: string, dest: string) {
+    fs.writeFileSync(path.join(dest, 'schema.graphql'), schema)
+  }
+
+  private writeResolvers(resolvers: StringMap, _path: string) {
+    Object.keys(resolvers).forEach(key => {
+      const vtlContend = resolvers[key]
+      const fileName = path.resolve(_path, key)
+      fs.writeFileSync(fileName, vtlContend)
+    })
   }
 }
 
