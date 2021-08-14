@@ -1276,7 +1276,7 @@ graphql-dynamodb-transformer@6.22.17, graphql-dynamodb-transformer@^6.22.17:
     md5 "^2.2.1"
     pluralize "^8.0.0"
 
-graphql-key-transformer@2.23.17:
+graphql-key-transformer@2.23.17, graphql-key-transformer@^2.23.17:
   version "2.23.17"
   resolved "https://registry.yarnpkg.com/graphql-key-transformer/-/graphql-key-transformer-2.23.17.tgz#6844be1612ec756c5ebcc986db03594d3d9aa909"
   integrity sha512-eOV4Xo+HuG45LIh9ntbTTSF48wtj2qzmcuGYtvmKdq4TBwGCTHM+zvBvBSbzCL9VP21wYtaNOQVFzL4IcmGmHA==
