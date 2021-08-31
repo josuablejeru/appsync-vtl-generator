@@ -1,12 +1,12 @@
 {
-  "name": "appsync-vlt-generator",
+  "name": "appsync-vtl-generator",
   "description": "generates VTL files from graphql schemas for appsync",
   "version": "0.1.0",
   "author": "Josua Blejeru @josuablejeru",
   "bin": {
-    "appsync-vlt-generator": "./bin/run"
+    "appsync-vtl-generator": "./bin/run"
   },
-  "bugs": "https://github.com/josuablejeru/appsync-vlt-generator/issues",
+  "bugs": "https://github.com/josuablejeru/appsync-vtl-generator/issues",
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",
+    "@types/deep-diff": "^1.0.1",
     "@types/node": "^10",
     "eslint": "^5.13",
     "eslint-config-oclif": "^3.1",
@@ -37,16 +38,16 @@
     "/bin",
     "/lib"
   ],
-  "homepage": "https://github.com/josuablejeru/appsync-vlt-generator",
+  "homepage": "https://github.com/josuablejeru/appsync-vtl-generator",
   "keywords": [
     "oclif"
   ],
   "license": "MIT",
   "main": "lib/index.js",
   "oclif": {
-    "bin": "appsync-vlt-generator"
+    "bin": "appsync-vtl-generator"
   },
-  "repository": "josuablejeru/appsync-vlt-generator",
+  "repository": "josuablejeru/appsync-vtl-generator",
   "scripts": {
     "posttest": "eslint . --ext .ts --config .eslintrc",
     "prepack": "rm -rf lib && tsc -b && oclif-dev readme",

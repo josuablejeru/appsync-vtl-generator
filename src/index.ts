@@ -2,12 +2,12 @@ import {Command, flags} from '@oclif/command'
 import * as transform from './transformer'
 import * as fs from 'fs'
 import * as path from 'path'
-import * as mkdirp from 'mkdirp'
+import mkdirp from 'mkdirp'
 import {FeatureFlags} from 'amplify-cli-core'
 import {CLIcontextProvider} from './enviroment'
 import {StringMap} from 'graphql-transformer-core/lib/DeploymentResources'
 
-class AppsyncVltGenerator extends Command {
+class AppsyncVtlGenerator extends Command {
   static description = `
   Generate VTL files and a graphql schema with the corresponding Query, Mutation and subscriptions.
 
@@ -27,7 +27,7 @@ class AppsyncVltGenerator extends Command {
 
   // command entry point
   async run() {
-    const {args} = this.parse(AppsyncVltGenerator)
+    const {args} = this.parse(AppsyncVtlGenerator)
 
     /**
      * This method initializes the FeatureFlags needed for the Transformers.
@@ -79,4 +79,4 @@ class AppsyncVltGenerator extends Command {
   }
 }
 
-export = AppsyncVltGenerator
+export = AppsyncVtlGenerator
