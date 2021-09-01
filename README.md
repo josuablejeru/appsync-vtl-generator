@@ -1,18 +1,14 @@
 appsync-vtl-generator
 =====================
 
-generates VTL files from graphql schemas for aws appsync resolvers
+Generate VTL files (appsync resolvers) for DynamoDB from graphql schemas
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/appsync-vtl-generator.svg)](https://npmjs.org/package/appsync-vtl-generator)
 [![Downloads/week](https://img.shields.io/npm/dw/appsync-vtl-generator.svg)](https://npmjs.org/package/appsync-vtl-generator)
 [![License](https://img.shields.io/npm/l/appsync-vtl-generator.svg)](https://github.com/josuablejeru/appsync-vtl-generator/blob/master/package.json)
 
-<!-- toc -->
-* [Usage](#usage)
-<!-- tocstop -->
 # Usage
-<!-- usage -->
 ```sh-session
 $ npm install -g appsync-vtl-generator
 $ appsync-vtl-generator [schema.graphql] [output dir]
@@ -23,7 +19,10 @@ USAGE
   $ appsync-vtl-generator [schema.graphql] [output dir]
 ...
 ```
-<!-- usagestop -->
+
+## Supported features:
+[x] DynamoDB vtl mappers (keys, relationships)
+[ ] auth rules with Cognito
 
 ## ✌️ Get in touch with me
 <a href="https://into-the-code.com" target="_blank"><img alt="Personal Website" src="https://img.shields.io/badge/Personal%20Website-%2312100E.svg?&style=for-the-badge&logoColor=white" /></a>

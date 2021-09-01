@@ -1,7 +1,7 @@
 {
   "name": "appsync-vtl-generator",
-  "description": "generates VTL files from graphql schemas for appsync",
-  "version": "0.1.0",
+  "description": "generates DynamoDB VTL files for aws appsync",
+  "version": "0.1.1",
   "author": "Josua Blejeru @josuablejeru",
   "bin": {
     "appsync-vtl-generator": "./bin/run"
@@ -40,7 +40,10 @@
   ],
   "homepage": "https://github.com/josuablejeru/appsync-vtl-generator",
   "keywords": [
-    "oclif"
+    "oclif",
+    "aws",
+    "aws-cdk",
+    "appsync"
   ],
   "license": "MIT",
   "main": "lib/index.js",
@@ -50,7 +53,7 @@
   "repository": "josuablejeru/appsync-vtl-generator",
   "scripts": {
     "posttest": "eslint . --ext .ts --config .eslintrc",
-    "prepack": "rm -rf lib && tsc -b && oclif-dev readme",
+    "prepack": "rm -rf lib && tsc -b",
     "test": "echo NO TESTS",
     "version": "oclif-dev readme && git add README.md",
     "lint": "eslint ./src/**/*.ts --fix"

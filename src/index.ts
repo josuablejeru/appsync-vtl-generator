@@ -22,7 +22,7 @@ class AppsyncVtlGenerator extends Command {
 
   static args = [
     {name: 'input'},
-    {name: 'output'},
+    {name: 'mapperOutput'},
   ]
 
   // command entry point
@@ -39,9 +39,9 @@ class AppsyncVtlGenerator extends Command {
     const transfomer = transform.getTransformer()
     const SCHEMA = fs.readFileSync(args.input).toString()
 
-    const destinationFolder = args.output
+    const destinationFolder = args.mapperOutput
 
-    // create the output folder else `fs.writeFileSync` will trow an error
+    // create the mapperOutput folder else `fs.writeFileSync` will trow an error
     await this.createFolders(destinationFolder)
 
     try {
