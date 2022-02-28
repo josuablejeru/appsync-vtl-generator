@@ -8,7 +8,10 @@ Generate VTL files (appsync resolvers) for DynamoDB from graphql schemas
 [![Downloads/week](https://img.shields.io/npm/dw/appsync-vtl-generator.svg)](https://npmjs.org/package/appsync-vtl-generator)
 [![License](https://img.shields.io/npm/l/appsync-vtl-generator.svg)](https://github.com/josuablejeru/appsync-vtl-generator/blob/master/package.json)
 
-# Usage
+## Examples
+Please visit my [Coffe Recipe Api](https://github.com/josuablejeru/coffee-recipe-api) to see how `appsync-vtl-generator` can be used in your project.
+
+## Usage
 ```sh-session
 $ npm install -g appsync-vtl-generator
 $ appsync-vtl-generator [schema.graphql] [output dir]
